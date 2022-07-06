@@ -1,0 +1,1 @@
+promises always return a promise whether the result is fulfilled or rejected

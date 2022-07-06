@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script>  
+var i = 0;  
+  
+function fun() {  
+var res = "Width = " + window.outerWidth + "<br>" + "Height = " + window.outerHeight;  
+document.getElementById("para").innerHTML = res;  
+  
+var res1 = i += 1;  
+document.getElementById("s1").innerHTML = res1; 
+
+}  
+function imgError() {
+  alert('The image could not be loaded.');
+} 
+function myFunction(x) {
+  x.style.background = "yellow";
+}
+</script>  
+</head>  
+<body onresize = "fun()"> 
+
+<div id="container" onmouseover="myFunction(this)">    
+<h3> This is an example of using onresize attribute. </h3>  
+<p> Resize the window </p>  
+  
+<p id = "para"> </p>  
+<p> You have resized the window <span id = "s1"> 0 </span> times.</p>  
+<img src="image.gif" onerror="imgError()">
+
+</div>
+</body>  
+</html>

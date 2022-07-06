@@ -1,0 +1,139 @@
+<html>
+    <body>
+        <h1> variables</h1>
+        <div id="main"> welcome</div><hr>
+        <div id="main2"> second div</div><hr>
+         <div id="main3">third div</div><hr>
+         <button type="button" onclick="document.write(5+3)">Click here</button><hr>
+         <button onclick="window.print()"> click to print page</button><hr>
+         <button type="button" onclick="myFunction()">Click here to call function</button><hr>
+         <h1 id="demo1"></h1><hr>
+         <p id="array"></p><hr>
+         <p id="fun"></p><hr>
+        </body>
+
+        <script type="text/javascript">
+        var name="javascript variables";
+        var x=document.getElementById("main");
+        var y=document.getElementById("main2").innerHTML;
+        document.getElementById("main3").innerHTML="<h1> main3 is replaced</h1>";
+        console.log(x);
+        console.log(y);
+        console.log(123==123);
+
+        function myFunction()
+        {
+            document.getElementById("demo1").innerHTML="Hello this is first function";
+        }
+
+        const user = ["priya","24","admin"];   //or var fruits=new Array(); fruits[0]='apple';
+        //console.log(user[1]);
+        //var [name,age,role]=user;
+
+        console.log(role);
+
+
+
+        
+
+
+       // fruits.push("grapes");
+        const cars={type:"fiat",model:"500",color:"black"}; //constant objects
+      //  fruits=["banana"]; cannot reassign the array
+
+        document.getElementById("array").innerHTML=fruits;
+        //alert(name); 
+        let length = 16;   //number type
+        let lastName ="sagar"; //string type
+        let objects = {firstName:"bharti",lastName:"sagar"}; //object type
+
+
+        //function return value
+        var fullName=function1("bharti","sagar");
+
+        function function1(a, b)
+        {
+            return a+" "+b;       
+         }
+         document.getElementById("fun").innerHTML=fullName;
+         
+         //for loop
+         for (let myLetVariable = 0; myLetVariable < 5; myLetVariable++) {
+           console.log(myLetVariable);
+          }
+          //for loop  of for arrays
+          for(let name of fruits)
+          {
+              console.log(name);
+          }
+          //for looop in for objects
+          var object = { a: 1, b: 2, c: 3 };
+
+           for (var property in object) {
+            console.log(`${property}: ${object[property]}`);
+            }
+
+            //prototype
+            var first;
+            var last;
+            function Person(first, last) {
+            this.first = first;
+            this.last = last;
+             }
+            Person.prototype.fullName = function() {
+             return this.first + ' ' + this.last;
+            };
+            Person.prototype.fullNameReversed = function() {
+             return this.last + ', ' + this.first;
+            };
+
+            //if statements
+            if(lastName=='sagar')
+           {
+              console.log("yes lastname is sagar");
+           }
+            else if(lastName == 'xyz')
+          {
+              console.log("no");
+          }
+
+          //while loop
+          var i=0;
+          while(i<10)
+          {
+              console.log(i);
+              i=i+2;
+          }
+
+          //do while
+          i=0;
+          do{
+            console.log("do while loop "+i);  
+            i=i+3;
+              
+          }
+          while(i<10)
+         
+          //function object
+          var name,age;
+          function person(name, age)
+          {
+           this.name=name;
+           this.age=age;   
+          }          
+          var personObject=new person('John',22);
+          var name=personObject.name;        //or personObject['name']='dave';
+          console.log(name); 
+          var user=prompt('enter name the key');
+          personObject[user]=prompt('enter age value'); 
+
+          //regular exp using search method
+          let text = "Hey today is sunday, is";
+         let n = text.search(/today/i);
+         let result = text.match(/is/g); //search all is 
+         console.log(n);
+         //create pattern
+         var pattern = /e/;
+        console.log(pattern.test("The best things in life are free!") );//test mathhos to   match
+    </script>
+</html>

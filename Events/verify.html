@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter name:</label> <input type="text" onchange="upperCase()" id="fname" onkeydown="myFunction()"><br><br>
+    <label>Enter password:</label><input type="password" id="password"><br>
+    <button type="submit" onclick="check()">Check</button>
+    <h1 id="heading"></h1>
+    <script>
+        function upperCase()
+        {
+            const x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        function check()
+        {   console.log(document.getElementById("password").value);
+            let fname = document.getElementById("fname").value;
+            let password = document.getElementById("password").value;
+            if(fname=='BHARTI' && password=='123')
+            {
+                document.getElementById('heading').innerText="user is verified";
+            }
+            else{
+                document.getElementById('heading').innerText="username or password is incorrect";
+            }
+        }
+        function myFunction() {
+        alert("You pressed a key inside the input field");
+        }
+    </script>
+</body>
+</html>

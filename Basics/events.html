@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container" class="firstclass">
+    <div>  this is a button
+    <button id="clicked"  >Click here</button>
+  </div>
+  <p class="firstclass">
+    hello
+  </p>
+  </div>
+</body>
+<script>
+
+  //  function clicked()
+  //  {
+  //    console.log("button is clicked");
+  //  }
+  //  window.onload=function(){
+  //    console.log("document is loaded");
+  //  }
+
+    //events in javascript
+    clicked.addEventListener("click",function(){console.log("clicked huya")});
+     
+    container.addEventListener('mouseover',function(){console.log("mouse moved on button")});
+
+    container.addEventListener('mouseout',function(){console.log("mouse is moved out of button")});
+
+    container.addEventListener('mouseup',function(){console.log("mouse clicked once and moved")});
+
+    let prevHTML=document.querySelectorAll('.firstclass')[1].innerHTML;
+         
+    container.addEventListener('mouseup',function(){
+      document.querySelectorAll('.firstclass')[1].innerHTML=prevHTML;
+      console.log("mouse clicked once and moved")});   
+
+       container.addEventListener('mousedown',function(){
+         document.querySelectorAll('.firstclass')[1].innerHTML="<b>text changed</b>";
+        console.log("mouse clicked and hold");
+      });
+
+    //  container.addEventListener('click',function(){
+    //    document.querySelectorAll[1]('.firstclass')[1].innerHTML="<b> button is select</b>"
+    //  });
+    
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //destructuring of array
+        const arr = [1,2,3,4];
+        const [one,two,three,four] = arr;
+        console.log(one);
+
+        //destructuring of objects 
+        const user = {
+            name:"pawan",
+            age:20,            
+        }
+        const { name , age } = user;
+        console.log(name);
+        console.log(age);
+
+        //Unpacking properties from objects passed as a function parameter
+        function userName({name})   //can also rename the property  as function userName({name: uname})
+        {
+            console.log(name);
+        }
+        userName(user);
+
+        //another example
+        const empl = {
+            id:1,
+            age:20,
+            nickName:"ps",
+            fullName:{
+                fname:"pawan",
+                Lname:"sagar"
+            }
+        }
+         function displayNickName({nickName:nName})   //rename nickname property as nName
+         {
+             console.log(nName)
+         }
+
+         displayNickName(empl);
+        
+         //fetch details from nested objects
+         function display({nickName,fullName : {fname : name}})
+         {
+            console.log(`Employee nick name is ${nickName} and real name is ${name} `);
+         }
+         display(empl);
+
+
+    </script>
+</body>
+</html>

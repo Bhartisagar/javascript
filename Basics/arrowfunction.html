@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+    <body>        
+        <div style="text-align: center;" id="container"><h1 >
+            Sample Login page <br>                   
+                <label> Enter firstName:</label><input type="text" id="firstName"><br>
+                <label> Enter lastName:</label><input type="text" id="lastName"><br>
+                <!-- <button id="clicked" >click here</button> -->
+                 <button id="clicked" onclick="myFunction()" >click here</button>
+           <p id="result"></p>
+        </h1>
+        </div>
+    </body>
+    <script>
+   
+      function myFunction()
+      {
+       var firstName = document.getElementById('firstName').value;
+       var  lastName = document.getElementById('lastName').value;
+        // arrow funtion with two firstname and lastname arguments
+      var shortName = (firstName,lastName) => {return firstName.charAt(0)+lastName.charAt(0);} 
+
+         
+       console.log( shortName(firstName,lastName));
+       var re=shortName(firstName,lastName);
+      document.getElementById('result').innerText=re;
+       
+      }
+     
+    
+      //   let r = document.getElementById('clicked');
+      //   r.addEventListener("click",function(){
+      //       let firstName = document.getElementById('firstName').value;
+      //   let lastName = document.getElementById('lastName').value;
+      //  let re= firstName.charAt(0)+lastName.charAt(0);
+      //  document.getElementById('result').innerText=re;
+      // console.log(firstName);
+               
+      //  });
+      // //console.log(firstName.charAt(0)+lastName.charAt(0));
+      //  console.log("hlo");
+        </script>
+</html>

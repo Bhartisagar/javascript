@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="readAll()">ReadAll</button>
+    <!-- <button onlick="add()">Add Data</button>
+    <button onclick="read()">Read data</button>
+    <button onclick="remove()">remove data</button> -->
+
+
+    <script>
+        var request=window.indexedDB.open("myDb",1);
+
+        const empData = [
+                  {id: "01",name : "dave", age:30, email: "dave@gmail.com"},
+                  {id: "02",name :"joey" ,age :25, email: "joey@gmail.com"}
+        ];
+        var db;
+        request.onerror= function(event)
+        {
+            console.log("error:");
+        };
+        request.onsuccess= function(event){
+            db=request.result;   //fetch your database name
+            console.log("success"+db);
+        };
+        request.onupgradeneeded=function(event)
+        {
+            var db = event.taret.result;
+            var objectStore = db.createObjectStore("employee",{keypath: "id"}); //set primary key
+            for(var i in empData)
+            {
+               objectStore.add(empData[i]);//add data
+            }
+        }
+         function readAll()
+         {
+             var objectStore=db.transaction("employee").objectStore("employee"));
+
+             objectStore.openCursor().onsuccess= function(event){
+                var cursor=event.taret.result;
+                if(cursor)
+                 {
+                     alert("Name for id"+cursor.key+ "is" +cursor.value.name+" age is: "+cursor.value.age+ "email is +" +cursor.value.email);
+                     cursor.continue();
+                 }
+                 else 
+                 {
+                     alert(no);
+                 }
+             }
+         }
+         
+
+    </script>
+</body>
+</html>

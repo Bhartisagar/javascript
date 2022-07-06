@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--     
+<h1>Cookie</h1>
+<div id="c"> -->
+    <button onclick="showCookies()">Show cookies</button>
+
+     <button onclick="clearOutputCookies()">
+  Clear
+    </button>
+
+    <div id="cookies">
+  
+    </div>
+
+</div>
+    <script>
+        // document.cookie= "name=john;SameSite=None;Secure";
+        // //alert(document.cookie);
+        // //bydefault expire dateof cookie is session
+        // document.getElementById("c").innerText=document.cookie;
+
+        document.cookie = "name=yogi; SameSite=None; Secure";
+        document.cookie = "place=india; SameSite=None; Secure";
+
+       function showCookies() {
+         const output = document.getElementById('cookies');
+         output.textContent = '> ' + document.cookie
+        }
+
+         function clearOutputCookies() {
+        const output = document.getElementById('cookies');
+        output.textContent = ''
+        }
+
+    </script>
+</body>
+</html>

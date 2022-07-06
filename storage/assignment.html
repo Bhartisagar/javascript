@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asssignment on localStorage and sessionStorage</title>
+</head>
+<body style="text-align:center">
+    <label>localScore:</label><input id="lstorage">
+    <label>sessionScore</label><input id="sstorage">
+    <button id="button">click here to increase count</button>
+    <script>
+        
+        localStorage.setItem("localScore",0);
+        sessionStorage.setItem("sessionScore",0);
+        var count=0;
+        button.onclick=function() {
+
+           count=parseInt(localStorage.getItem("localScore"),10);
+          // console.log(typeof count);
+           count=count+1;
+           //console.log(count);
+           localStorage.setItem("localScore",count);
+           sessionStorage.setItem("sessionScore",count);
+           document.getElementById("lstorage").value = count;
+           document.getElementById("sstorage").value = count;
+          
+             
+        
+        window.onbeforeunload = () => {
+            localStorage.clear();
+            sessionStorage.clear();
+        }
+    }
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                            
+          // Create a Set
+          var letters = new Set();
+          letters.add("a");
+          letters.add("b");
+          letters.add("c");
+        //iterate it using for each
+          letters.forEach(function(value){console.log(value);});
+          //iterate using for of loop
+          for(let v of letters.values())
+          {
+              console.log(v);
+          }
+
+          // Create a Map
+          var fruit = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+          ]);
+          fruit.set("guava",600);
+          //iterate using forEach loop
+          fruit.forEach(function(value,key){console.log(value+" "+key)});
+          //iterate using for of loop
+          for(let v of fruit.entries)
+          {
+              console.log(v);
+          }
+
+    </script>
+</body>
+</html>

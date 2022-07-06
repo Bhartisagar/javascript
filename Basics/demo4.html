@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" class="firstclass">
+        <div>  this is a button
+        <button id="click" >Click here</button>
+      </div>
+      <p class="firstclass">
+        hello
+      </p>
+      </div>
+</body>
+<script>
+    //Arrow functions
+    //   function sum(a, b)
+    //   {
+    //       return a+b;
+    //   }
+       //let sum=function(a,b){return a+b;}
+      let sum = (a,b)=>{ 
+           return a+b; 
+        }
+         second = () =>{
+            document.querySelectorAll('.firstclass')[1].innerHTML="<b> set time out</b> "
+            console.log("arrow funtion")};
+            
+            //constructor function 
+            var constr=new Function('console.log("constructor")');
+            constr();
+       //setTimeout and setinterval 
+       //setTimeout(second,2000);
+       intervalId=setInterval(second,1000);
+       // clearInterval(intervalId);
+      // local data storage
+
+</script>
+</html>

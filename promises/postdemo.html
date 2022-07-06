@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username">
+        <input type="text" name="password">
+        <button type="submit">Submit</button>
+
+    </form>
+    <button id="myBtn" onclick="postData()">Post It</button>
+    <script>
+        var data = {
+           name:"bharti",
+           status:"Beginner"         
+        }
+        function postData()
+        {
+            const url="";
+             param={
+             method:"post",
+             body: JSON.stringify(data),
+             headers:{'Content-type':'application/json'}
+
+         }
+        fetch(url,param).then((response)=>response.json()).then((resp)=>console.log(resp))
+        }
+    </script>
+</body>
+</html>

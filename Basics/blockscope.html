@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> let,const and var<br>
+          block scope<br>
+          closure<br>
+    </h2>
+    <script>
+    console.log(x);
+   // console.log(y);
+        var x=10;
+         let y=8;
+         //y=5;
+         //const z;
+         const z=9;
+         //z=3;
+
+        //block scope
+       var a=3;
+       {
+            var a=9;
+            let b=2;
+            const c=1;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+            // console.log(a);
+            // console.log(b);
+            // console.log(c);
+
+
+        // closure
+        function parent()
+        {
+           var x=3;
+           function child()
+           {
+               console.log(x);
+           }
+           return child;
+        }
+
+        var cal=parent();
+        console.log(cal);
+        cal();
+        
+    </script>
+</body>
+</html>

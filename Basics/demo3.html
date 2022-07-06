@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript tutorial</title>
+    <style>
+        .bg-primary
+        {
+          background-color: aliceblue;
+        }
+        .texts{
+            color: orchid;
+        }
+    </style>
+</head>
+<body><div class="container">
+    <h1>welcome to javascript</h1>
+    <div>hlo</div>
+    <button id="click">click me</button>
+    <button id="s">click me</button>
+</div>
+    <script>
+        var marks=
+        {
+            bharti:20,
+            sagar:10,
+            pawan:20
+        }
+        console.log(marks);
+        var arr=[1,2,3,4,5];
+        arr.forEach(function(element)
+        {
+            console.log(element);
+        })
+    //     let mydate=new Date();
+    //    console.log(mydate);
+    //    console.log(mydate.getDate());
+    //    console.log(mydate.getTime());
+    //    console.log(mydate.getMinutes());
+
+    //Dom manipulation
+        document.getElementById('click').style.border='1px solid black'
+        let elem = document.getElementById('click');
+        console.log(elem);
+        let elemclass = document.getElementsByClassName('container');
+        console.log(elemclass);
+       elemclass[0].style.background = "yellow";
+        elemclass[0].classList.add("bg-primary");
+        elemclass[0].classList.add("texts");
+        console.log(elem.innerText);
+        console.log(elemclass[0].innerText);
+         tagname=document.getElementsByTagName('div');
+         
+         //create elements
+         createdElement=document.createElement('p');
+         createdElement.innerText="this is created by created element function";
+         tagname[0].appendChild(createdElement);
+
+         createdElement2=document.createElement('button');
+         createdElement2.innerText="newButton";
+         tagname[0].appendChild(createdElement2);
+     
+         //selecting using query
+         sel=document.querySelector('.container');
+         console.log(sel);
+
+         sel=document.querySelectorAll('.container');
+         console.log(sel);
+         
+         document.getElementById('click').style.color="red";
+         
+    </script>
+</body>
+</html>

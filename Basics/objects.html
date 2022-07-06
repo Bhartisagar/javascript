@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+   <script> 
+   var object1={id : 100,name : "dave",salary:10000};
+   document.write(object1.id+" "+object1.name+" "+object1.salary+" ");
+
+   //new keyword
+   var object2= new Object();
+   object2.id=2;
+   object2.name="sagar";
+   object2.salary=10000;
+   document.write(object2.id+" "+object2.name+" "+object2.salary+" ");
+
+   
+   //constructor object
+   function Employee(id,name,salary)
+   {
+       this.id = id;
+       this.name = name;    
+       this.salary=salary;
+
+   }
+   var emp=new Employee(2,"xyz",10000);   //constructor
+   document.write(emp.id+" "+emp.name+" "+emp.salary+" ");
+
+   //methods
+   var person = {
+       firstName:" dave",
+       lastName: "robinson",
+       age:20,
+       fullname: function(){return this.firstName+" "+this.lastName},
+   };
+     
+   //object prototype
+   function Person(first,last,age)
+   {
+    this.firstName= first;
+    this.lastName= last
+    this.age=age;
+   } 
+   //add new property using prototype
+   Person.prototype.city = "faridabad";
+
+   var s = new Person('Simon', 'Willison',56);
+   //s.firstNameCaps(); // TypeError on line 1: s.firstNameCaps is not a function
+
+   Person.prototype.firstNameCaps = function() {
+  return this.firstName.toUpperCase();
+    };
+  document.write(s.firstNameCaps());
+
+
+//callback 
+
+function myDisplayer(something) {
+  document.getElementById("demo").innerHTML = something;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+myCalculator(5, 5, myDisplayer);
+
+  
+   </script>
+</body>
+</html>

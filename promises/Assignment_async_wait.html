@@ -1,0 +1,51 @@
+<!-- 
+*
+* Assume we are fetching the data from a rest endpoint in the get data function.
+* we can simulate the same by replacing the setTimeout with fetch api and executing the same in a browser.
+*
+*/
+
+function getData(uId) {
+setTimeout(() => {
+console.log("Fetched the data!");
+return "skc@gmail.com";
+}, 4000);
+}
+
+console.log("start");
+var email = getData("skc");
+console.log("Email id of the user id is: " + email);
+console.log("end");
+
+// How do you solve this problem. How can we wait for till the function execution is completed, so that we can have correct email at line 10? 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>   
+    
+    async function getData(uId){
+        return new Promise(resolve=>{
+            setTimeout(()=>{
+                console.log("skc@gmail.com");
+                resolve();
+            },1000);
+        });
+    }
+    async function caller(){
+        console.log("start Solution")
+        await getData("skc");
+        console.log("end Solution")
+    } 
+    caller();
+    
+    </script>
+
+</body>
+</html>
